@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="599.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignUp">
+   <children>
+      <Label layoutX="156.0" layoutY="191.0" />
+      <AnchorPane prefHeight="84.0" prefWidth="707.0" style="-fx-background-color: #330033;">
+         <children>
+            <Label layoutX="263.0" layoutY="-1.0" prefHeight="70.0" prefWidth="214.0" text="SignUp Page" textFill="#e1e1e1">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="60.0" prefHeight="538.0" prefWidth="707.0" style="-fx-background-color: #9999FF;">
+         <children>
+            <Label layoutX="85.0" layoutY="80.0" prefHeight="46.0" prefWidth="158.0" text="Name" textFill="#511e1e">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="85.0" layoutY="151.0" prefHeight="46.0" prefWidth="158.0" text="Mobile" textFill="#511e1e">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="86.0" layoutY="212.0" prefHeight="46.0" prefWidth="158.0" text="Username" textFill="#511e1e">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="86.0" layoutY="282.0" prefHeight="46.0" prefWidth="158.0" text="Password" textFill="#511e1e">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="85.0" layoutY="356.0" prefHeight="46.0" prefWidth="158.0" text="Conform Password" textFill="#511e1e">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtName" layoutX="291.0" layoutY="90.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="txtMobile" layoutX="291.0" layoutY="151.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="txtUsername" layoutX="291.0" layoutY="222.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="txtPassword" layoutX="291.0" layoutY="292.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="txtConfirm" layoutX="291.0" layoutY="366.0" prefHeight="26.0" prefWidth="245.0" />
+            <Button layoutX="552.0" layoutY="454.0" mnemonicParsing="false" onAction="#signUpBtn" prefHeight="35.0" prefWidth="134.0" text="Sign Up" textFill="#4e1f1f">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="393.0" layoutY="454.0" mnemonicParsing="false" onAction="#cancelBtn" prefHeight="35.0" prefWidth="134.0" text="Cancel" textFill="#4e1f1f">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

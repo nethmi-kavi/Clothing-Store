@@ -1,0 +1,8 @@
+
+
+#lbl1 {
+    -fx-background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/10/Download-Beautiful-Girl-Picture.jpg);
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain; /* or 'cover', or specific size like 100px 100px */
+    -fx-background-position: center center;
+}
