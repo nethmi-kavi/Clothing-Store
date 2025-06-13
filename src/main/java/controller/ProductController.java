@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -65,7 +66,7 @@ public class ProductController {
     @FXML
     void saveBtn(ActionEvent event) throws SQLException {
 try{
-        String id=txtId.getText();
+        String id= txtId.getText();
         String name=txtName.getText();
         double price= Double.parseDouble(txtPrice.getText());
         int qty= Integer.parseInt(txtQuentity.getText());
@@ -102,8 +103,10 @@ public void loadTable(){
         colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         colQty.setCellValueFactory(new PropertyValueFactory<>("quentity"));
 
+        ObservableList <Product> products=ps.getAll();
 
-        tblProduct.setItems(cs.getAll());
+
+        tblProduct.setItems(products);
 
 
     } catch (SQLException e) {
@@ -136,7 +139,18 @@ public void loadTable(){
         return newId;
     }
 
+    @FXML
+    void deleteBtn(ActionEvent event) throws SQLException {
+
+    String id=txtId.getText();
+   ps.deleteProduct(id);
+
+   loadTable();
+
+    }
 
 
 
+    public void serchBtn(ActionEvent actionEvent) {
+    }
 }

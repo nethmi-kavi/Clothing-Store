@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="545.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
    <children>
       <AnchorPane layoutX="1.0" prefHeight="84.0" prefWidth="750.0" style="-fx-background-color: #330033;">
@@ -45,7 +44,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="469.0" layoutY="491.0" mnemonicParsing="false" onAction="#cancelBtn" prefHeight="35.0" prefWidth="134.0" text="Cancel" textFill="#4e1f1f">
+            <Button layoutX="469.0" layoutY="491.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="35.0" prefWidth="134.0" text="Delete" textFill="#4e1f1f">
                <font>
                   <Font size="16.0" />
                </font>
@@ -64,6 +63,16 @@
                   <Font size="16.0" />
                </font>
             </Label>
+            <Button layoutX="558.0" layoutY="31.0" mnemonicParsing="false" onAction="#serchBtn" prefHeight="35.0" prefWidth="134.0" text="Search" textFill="#4e1f1f">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="325.0" layoutY="491.0" mnemonicParsing="false" onAction="#cancelBtn" prefHeight="35.0" prefWidth="134.0" text="Cancel" textFill="#4e1f1f">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
