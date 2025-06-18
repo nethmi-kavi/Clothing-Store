@@ -2,7 +2,6 @@ package service.custom;
 
 import javafx.collections.ObservableList;
 import model.Product;
-import model.User;
 import service.SuperService;
 
 import java.sql.SQLException;

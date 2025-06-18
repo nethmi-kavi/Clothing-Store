@@ -1,5 +1,8 @@
 package service;
 
+import model.Employee;
+import model.User;
+import service.custom.impl.EmployeeServiceImpl;
 import service.custom.impl.ProductServiceImpl;
 import service.custom.impl.UserServiceImpl;
 import util.ServiceType;
@@ -14,8 +17,9 @@ public class ServiceFactory {
 
     public <T extends SuperService>T getServiceType(ServiceType type){
         switch (type){
-            case USER:return(T) new UserServiceImpl();
+            case EMPLOYEE:return(T) new EmployeeServiceImpl();
             case PRODUCT:return(T) new ProductServiceImpl();
+            case USER:return(T) new UserServiceImpl();
 
         }
         return null;

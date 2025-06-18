@@ -1,5 +1,7 @@
 package repository;
 
+import model.Employee;
+import repository.custom.impl.EmployeeRepositoryImpl;
 import repository.custom.impl.ProductRepositoryImpl;
 import repository.custom.impl.UserRepositoryImpl;
 import util.RepositoryType;
@@ -14,8 +16,9 @@ public class DaoFactory {
 
     public <T extends SuperRepository>T getRepositoryType(RepositoryType type){
         switch (type){
-            case USER:return(T) new UserRepositoryImpl();
+            case EMPLOYEE:return(T) new EmployeeRepositoryImpl();
             case PRODUCT:return(T) new ProductRepositoryImpl();
+            case USER:return(T) new UserRepositoryImpl();
 
         }
         return null;

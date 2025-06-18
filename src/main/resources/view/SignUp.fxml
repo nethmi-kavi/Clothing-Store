@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="599.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignUp">
    <children>
       <Label layoutX="156.0" layoutY="191.0" />
@@ -61,6 +60,12 @@
                   <Font size="16.0" />
                </font>
             </Button>
+            <Label layoutX="86.0" layoutY="14.0" prefHeight="46.0" prefWidth="158.0" text="Id" textFill="#511e1e">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtId" layoutX="291.0" layoutY="24.0" prefHeight="26.0" prefWidth="245.0" />
          </children>
       </AnchorPane>
    </children>

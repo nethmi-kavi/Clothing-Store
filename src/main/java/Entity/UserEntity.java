@@ -1,4 +1,4 @@
-package model;
+package Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserEntity {
     private String id;
     private String name;
     private String mobild;

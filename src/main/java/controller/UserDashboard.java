@@ -8,22 +8,19 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AdminPage {
+public class UserDashboard {
 
     @FXML
-    void btnEmployee(ActionEvent event) throws IOException {
+    void btnPasswordChange(ActionEvent event) {
 
-        Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/employe_form.fxml"))));
-        stage.show();
     }
 
     @FXML
     void btnProduct(ActionEvent event) throws IOException {
+
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Product.fxml"))));
         stage.show();
-
     }
 
     @FXML

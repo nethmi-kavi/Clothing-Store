@@ -4,7 +4,6 @@ import Entity.ProductEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Product;
-import model.User;
 import org.modelmapper.ModelMapper;
 import repository.DaoFactory;
 import repository.custom.ProductRepository;

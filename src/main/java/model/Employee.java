@@ -9,11 +9,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Employee {
     private String id;
     private String name;
     private String mobild;
     private String username;
     private String password;
-
+    private String conPass;
 }

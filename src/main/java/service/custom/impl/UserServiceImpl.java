@@ -1,32 +1,54 @@
 package service.custom.impl;
 
+import Entity.EmployeeEntity;
+import Entity.UserEntity;
 import javafx.collections.ObservableList;
+import model.Employee;
+import model.Product;
 import model.User;
+import org.modelmapper.ModelMapper;
+import repository.DaoFactory;
+import repository.custom.UserRepository;
 import service.custom.UserService;
-import util.CrudUtil;
+import util.RepositoryType;
 
 import java.sql.SQLException;
 
 public class UserServiceImpl implements UserService {
+    UserRepository us = DaoFactory.getInstance().getRepositoryType(RepositoryType.USER);
+
+
 
     @Override
     public Boolean addUser(User u1) throws SQLException {
-        String query = "INSERT INTO employee(name, mobile, username, password,confirm) VALUES (?, ?, ?, ?, ?)";
-        return CrudUtil.execute(query, u1.getName(), u1.getMobile(), u1.getUsername(), u1.getPassword(),u1.getConpassword());
-    }
+        UserEntity ue =new ModelMapper().map(u1,UserEntity.class);
 
-    @Override
-    public Boolean updateCustomer(User u1) {
-        return null;
-    }
-
-    @Override
-    public User searchById(String id) {
-        return null;
+        return us.add(ue);
     }
 
     @Override
     public ObservableList getAll() throws SQLException {
         return null;
     }
+
+    @Override
+    public Boolean deleteUser(String id) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public User SearchByUsername(String username) throws SQLException {
+        UserEntity entity= us.searchByUsername(username);
+        if (username == null || username.isBlank()) {
+            return null;
+        }
+
+
+        if (entity == null) {
+            return null;
+        }
+        return new ModelMapper().map(entity,User.class);
+    }
+
+
 }

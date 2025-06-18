@@ -47,6 +47,7 @@ public class ProductRepositoryImpl implements ProductRepository{
                 pe.setPrice(rs.getDouble(3));
                 pe.setQuentity(Integer.valueOf(rs.getString(4)));
 
+
                 list.add(pe);
             }
 

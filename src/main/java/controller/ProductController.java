@@ -11,7 +11,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.Product;
 import service.ServiceFactory;
 import service.custom.ProductService;
-import service.custom.UserService;
 import util.CrudUtil;
 import util.ServiceType;
 

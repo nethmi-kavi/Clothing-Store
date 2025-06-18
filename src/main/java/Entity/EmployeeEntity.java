@@ -1,4 +1,4 @@
-package model;
+package Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,11 +9,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class EmployeeEntity {
     private String id;
     private String name;
     private String mobild;
     private String username;
     private String password;
-
+    private String conPass;
 }

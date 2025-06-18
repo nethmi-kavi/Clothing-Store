@@ -1,27 +1,24 @@
 
     package controller;
 
+import com.sun.javafx.charts.Legend;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import model.User;
+import model.Employee;
 import service.ServiceFactory;
-import service.SuperService;
-import service.custom.UserService;
-import service.custom.impl.UserServiceImpl;
-import util.CrudUtil;
+import service.custom.EmployeeService;
 import util.ServiceType;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 
 
     public class SignUp  {
 
         @FXML
         private TextField txtConfirm;
+
+        @FXML
+        private TextField txtId;
 
         @FXML
         private TextField txtMobile;
@@ -35,7 +32,7 @@ import java.sql.ResultSet;
         @FXML
         private TextField txtUsername;
 
-        UserService superService= ServiceFactory.getInstance().getServiceType(ServiceType.USER);
+        EmployeeService superService= ServiceFactory.getInstance().getServiceType(ServiceType.EMPLOYEE);
 
         @FXML
 
@@ -57,14 +54,15 @@ import java.sql.ResultSet;
 
                 try {
 
+                    String id=txtId.getText();
                             String name=txtName.getText();
                             String mobile=txtMobile.getText();
                             String username=txtUsername.getText();
                             String password=txtPassword.getText();
                             String copassword=txtConfirm.getText();
 
-                       User u1= new User(name,mobile,username,password,copassword);
-                    boolean success=superService.addUser(u1);
+                       Employee u1= new Employee(id,name,mobile,username,password,copassword);
+                    boolean success=superService.addEmployee(u1);
 
                     if (success) {
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
