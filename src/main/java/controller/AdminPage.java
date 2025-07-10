@@ -27,8 +27,26 @@ public class AdminPage {
     }
 
     @FXML
-    void btnReports(ActionEvent event) {
+    void btnOrders(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/order_Page.fxml"))));
+        stage.show();
+    }
 
+    @FXML
+    void btnReports(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/reports.fxml"))));
+        stage.show();
+
+    }
+
+    @FXML
+    void btnUser(ActionEvent event) throws IOException {
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/UserPage.fxml"))));
+        stage.show();
     }
 
 }

@@ -1,5 +1,5 @@
 package util;
 
 public enum RepositoryType {
-    EMPLOYEE,PRODUCT,USER
+    EMPLOYEE,PRODUCT,ORDER, ORDERDETAIL, USER
 }

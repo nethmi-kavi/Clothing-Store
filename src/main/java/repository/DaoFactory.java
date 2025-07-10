@@ -1,9 +1,7 @@
 package repository;
 
 import model.Employee;
-import repository.custom.impl.EmployeeRepositoryImpl;
-import repository.custom.impl.ProductRepositoryImpl;
-import repository.custom.impl.UserRepositoryImpl;
+import repository.custom.impl.*;
 import util.RepositoryType;
 
 public class DaoFactory {
@@ -19,6 +17,8 @@ public class DaoFactory {
             case EMPLOYEE:return(T) new EmployeeRepositoryImpl();
             case PRODUCT:return(T) new ProductRepositoryImpl();
             case USER:return(T) new UserRepositoryImpl();
+            case ORDER:return(T) new OrderRepositoryImpl();
+            case ORDERDETAIL:return(T) new OrderDetailRepositoryImpl();
 
         }
         return null;

@@ -8,4 +8,6 @@ import java.sql.SQLException;
 
 public interface UserRepository extends CrudRepository<UserEntity,String> {
  UserEntity searchByUsername (String username)throws  SQLException;
+
+ UserEntity searchByUsernameandId(String id, String username) throws SQLException;
 }

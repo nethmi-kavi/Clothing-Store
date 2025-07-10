@@ -49,12 +49,12 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <TableView fx:id="tblProduct" layoutX="33.0" layoutY="250.0" prefHeight="215.0" prefWidth="298.0">
+            <TableView fx:id="tblProduct" layoutX="33.0" layoutY="250.0" prefHeight="215.0" prefWidth="507.0">
               <columns>
-                <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
-                <TableColumn fx:id="colName" prefWidth="75.0" text="Name" />
-                  <TableColumn fx:id="colPrice" prefWidth="75.0" text="Price" />
-                  <TableColumn fx:id="colQty" prefWidth="75.0" text="Quentity" />
+                <TableColumn fx:id="colId" prefWidth="116.0" text="Id" />
+                <TableColumn fx:id="colName" prefWidth="126.4000244140625" text="Name" />
+                  <TableColumn fx:id="colPrice" prefWidth="113.5999755859375" text="Price" />
+                  <TableColumn fx:id="colQty" prefWidth="151.20001220703125" text="Quentity" />
               </columns>
             </TableView>
             <TextField fx:id="txtId" layoutX="299.0" layoutY="36.0" prefHeight="26.0" prefWidth="245.0" />
@@ -73,7 +73,18 @@
                   <Font size="16.0" />
                </font>
             </Button>
+            <Button layoutX="558.0" layoutY="80.0" mnemonicParsing="false" onAction="#updateBtn" prefHeight="35.0" prefWidth="134.0" text="Update" textFill="#4e1f1f">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="558.0" layoutY="130.0" mnemonicParsing="false" onAction="#reportBtn" prefHeight="35.0" prefWidth="134.0" text="Print Report" textFill="#4e1f1f">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

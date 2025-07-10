@@ -15,8 +15,10 @@ import service.ServiceFactory;
 import service.custom.EmployeeService;
 import service.custom.ProductService;
 import service.custom.UserService;
+import util.CrudUtil;
 import util.ServiceType;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EmployeForm {
@@ -57,44 +59,52 @@ public class EmployeForm {
     EmployeeService cs = ServiceFactory.getInstance().getServiceType(ServiceType.EMPLOYEE);
 
     public void initialize(){
+
         loadTable();
+
     }
 
     @FXML
     void btnAdd(ActionEvent event) throws SQLException {
-        try{
-        UserService us= ServiceFactory.getInstance().getServiceType(ServiceType.USER);
-        String id=txtId.getText();
-        String name=txtName.getText();
-        String mobile=txtMobile.getText();
-        String username=txtUsername.getText();
-        String password = txtPass.getText();
+        try {
+            UserService us = ServiceFactory.getInstance().getServiceType(ServiceType.USER);
+
+            String id = txtId.getText().trim();
+            String name = txtName.getText().trim();
+            String mobile = txtMobile.getText().trim();
+            String username = txtUsername.getText().trim();
+            String password = txtPass.getText();
 
 
-        User u1=new User(id,name,mobile,username,password);
-        boolean success= us.addUser(u1);
 
 
-        if (success) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setHeaderText(null);
-            alert.setContentText("User registered successfully!");
+                User u1 = new User(id, name, mobile, username, password);
+                boolean success = us.addUser(u1);
+
+                if (success) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Success");
+                    alert.setHeaderText(null);
+                    alert.setContentText("User registered successfully!");
+                    alert.showAndWait();
+
+
+                    cs.deleteEmployee(id);
+
+                    loadTable();
+
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Could not register user");
+            alert.setContentText(e.getMessage());
             alert.showAndWait();
-            cs.deleteEmployee(id);
-
-
-            loadTable();
         }
 
-    } catch (Exception e) {
-        e.printStackTrace();
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText("Could not register User");
-        alert.setContentText(e.getMessage());
-        alert.showAndWait();
-    }
 
 
     }
@@ -130,5 +140,6 @@ public class EmployeForm {
             throw new RuntimeException(e);
         }
     }
+
 
 }

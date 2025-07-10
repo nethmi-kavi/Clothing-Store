@@ -1,5 +1,6 @@
 package repository.custom.impl;
 
+import Entity.OrderDetailEntity;
 import Entity.ProductEntity;
 import model.Product;
 import repository.custom.ProductRepository;
@@ -19,8 +20,17 @@ public class ProductRepositoryImpl implements ProductRepository{
     }
 
     @Override
+    public boolean updateQty(OrderDetailEntity entity) throws SQLException {
+        String sql="UPDATE product SET qty = qty - ? WHERE id = ?";
+
+        return CrudUtil.execute(sql,entity.getQty(),entity.getItemCode());
+    }
+
+    @Override
     public boolean update(ProductEntity entity) throws SQLException {
-        return false;
+        return CrudUtil.execute("UPDATE product SET name = ?, price = ?, qty = ? WHERE id = ?",
+                entity.getName(), entity.getPrice(), entity.getQuentity(), entity.getId()
+        );
     }
 
     @Override
@@ -30,8 +40,28 @@ public class ProductRepositoryImpl implements ProductRepository{
     }
 
     @Override
-    public ProductEntity searchById(String integer) throws SQLException {
-        return null;
+    public ProductEntity searchById(String id) throws SQLException {
+        try {
+            ResultSet rs=CrudUtil.execute("SELECT * FROM product WHERE id=?",id);
+            if (rs.next()) {
+                ProductEntity pe = new ProductEntity();
+                pe.setId(rs.getString(1));
+                pe.setName(rs.getString(2));
+                pe.setPrice(rs.getDouble(3));
+                pe.setQuentity(Integer.valueOf(rs.getString(4)));
+
+                return pe;
+             }
+            else {
+                return null;
+            }
+
+            } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
+
     }
 
     @Override
