@@ -1,6 +1,7 @@
 package repository;
 
 import model.Employee;
+import model.Supplier;
 import repository.custom.impl.*;
 import util.RepositoryType;
 
@@ -19,6 +20,7 @@ public class DaoFactory {
             case USER:return(T) new UserRepositoryImpl();
             case ORDER:return(T) new OrderRepositoryImpl();
             case ORDERDETAIL:return(T) new OrderDetailRepositoryImpl();
+            case SUPPLIER:return(T) new SupplierRepositoryImpl();
 
         }
         return null;

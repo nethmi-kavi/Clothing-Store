@@ -8,18 +8,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="545.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
+<AnchorPane prefHeight="612.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
    <children>
-      <AnchorPane layoutX="1.0" prefHeight="84.0" prefWidth="750.0" style="-fx-background-color: #330033;">
+      <AnchorPane layoutX="1.0" prefHeight="84.0" prefWidth="670.0" style="-fx-background-color: #330033;">
          <children>
-            <Label layoutX="306.0" prefHeight="70.0" prefWidth="214.0" text="Product" textFill="#e1e1e1">
+            <Label layoutX="249.0" layoutY="7.0" prefHeight="70.0" prefWidth="214.0" text="Product" textFill="#e1e1e1">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1.0" layoutY="68.0" prefHeight="546.0" prefWidth="750.0" style="-fx-background-color: #9999FF;">
+      <AnchorPane layoutX="2.0" layoutY="84.0" prefHeight="528.0" prefWidth="670.0" style="-fx-background-color: #9999FF;">
          <children>
             <Label layoutX="46.0" layoutY="75.0" prefHeight="46.0" prefWidth="158.0" text="Name" textFill="#511e1e">
                <font>
@@ -36,15 +36,15 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="txtName" layoutX="299.0" layoutY="85.0" prefHeight="26.0" prefWidth="245.0" />
-            <TextField fx:id="txtPrice" layoutX="299.0" layoutY="135.0" prefHeight="26.0" prefWidth="245.0" />
-            <TextField fx:id="txtQuentity" layoutX="299.0" layoutY="182.0" prefHeight="26.0" prefWidth="245.0" />
-            <Button layoutX="615.0" layoutY="491.0" mnemonicParsing="false" onAction="#saveBtn" prefHeight="35.0" prefWidth="134.0" text="Save" textFill="#4e1f1f">
+            <TextField fx:id="txtName" layoutX="249.0" layoutY="85.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="txtPrice" layoutX="249.0" layoutY="140.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="txtQuentity" layoutX="249.0" layoutY="182.0" prefHeight="26.0" prefWidth="245.0" />
+            <Button layoutX="473.0" layoutY="473.0" mnemonicParsing="false" onAction="#saveBtn" prefHeight="35.0" prefWidth="134.0" text="Save" textFill="#4e1f1f">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="469.0" layoutY="491.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="35.0" prefWidth="134.0" text="Delete" textFill="#4e1f1f">
+            <Button layoutX="320.0" layoutY="473.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="35.0" prefWidth="134.0" text="Delete" textFill="#4e1f1f">
                <font>
                   <Font size="16.0" />
                </font>
@@ -57,34 +57,33 @@
                   <TableColumn fx:id="colQty" prefWidth="151.20001220703125" text="Quentity" />
               </columns>
             </TableView>
-            <TextField fx:id="txtId" layoutX="299.0" layoutY="36.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="txtId" layoutX="249.0" layoutY="36.0" prefHeight="26.0" prefWidth="245.0" />
             <Label layoutX="46.0" layoutY="26.0" prefHeight="46.0" prefWidth="158.0" text="Id" textFill="#511e1e">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button layoutX="558.0" layoutY="31.0" mnemonicParsing="false" onAction="#serchBtn" prefHeight="35.0" prefWidth="134.0" text="Search" textFill="#4e1f1f">
+            <Button layoutX="512.0" layoutY="31.0" mnemonicParsing="false" onAction="#serchBtn" prefHeight="35.0" prefWidth="134.0" text="Search" textFill="#4e1f1f">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="325.0" layoutY="491.0" mnemonicParsing="false" onAction="#cancelBtn" prefHeight="35.0" prefWidth="134.0" text="Cancel" textFill="#4e1f1f">
+            <Button layoutX="170.0" layoutY="473.0" mnemonicParsing="false" onAction="#cancelBtn" prefHeight="35.0" prefWidth="134.0" text="Cancel" textFill="#4e1f1f">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="558.0" layoutY="80.0" mnemonicParsing="false" onAction="#updateBtn" prefHeight="35.0" prefWidth="134.0" text="Update" textFill="#4e1f1f">
+            <Button layoutX="512.0" layoutY="80.0" mnemonicParsing="false" onAction="#updateBtn" prefHeight="35.0" prefWidth="134.0" text="Update" textFill="#4e1f1f">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="558.0" layoutY="130.0" mnemonicParsing="false" onAction="#reportBtn" prefHeight="35.0" prefWidth="134.0" text="Print Report" textFill="#4e1f1f">
+            <Button layoutX="512.0" layoutY="135.0" mnemonicParsing="false" onAction="#reportBtn" prefHeight="35.0" prefWidth="134.0" text="Print Report" textFill="#4e1f1f">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

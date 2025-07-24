@@ -1,12 +1,12 @@
 package service;
 
 import model.Employee;
+import model.Supplier;
 import model.User;
-import service.custom.impl.EmployeeServiceImpl;
-import service.custom.impl.OrderServiceImpl;
-import service.custom.impl.ProductServiceImpl;
-import service.custom.impl.UserServiceImpl;
+import service.custom.impl.*;
 import util.ServiceType;
+
+import static util.RepositoryType.SUPPLIER;
 
 public class ServiceFactory {
 
@@ -22,6 +22,7 @@ public class ServiceFactory {
             case PRODUCT:return(T) new ProductServiceImpl();
             case USER:return(T) new UserServiceImpl();
             case ORDER:return(T) new OrderServiceImpl();
+            case SUPPLIER:return(T) new SupplierServiceImpl();
 
         }
         return null;

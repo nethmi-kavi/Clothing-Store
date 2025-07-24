@@ -93,4 +93,9 @@ public class UserRepositoryImpl implements UserRepository {
     public UserEntity searchByUsernameandId(String id, String username) throws SQLException {
         return null;
     }
+
+    @Override
+    public Boolean updateUserPassword(String id, String password) throws SQLException {
+        return CrudUtil.execute("UPDATE user SET password = ? WHERE id = ?", password, id);
+    }
 }

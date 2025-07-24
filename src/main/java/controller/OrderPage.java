@@ -1,5 +1,7 @@
 package controller;
 
+import com.sun.javafx.collections.MappingChange;
+import db.DBConnection;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -14,6 +16,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Duration;
 import model.*;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import service.ServiceFactory;
 import service.custom.OrderService;
 import service.custom.ProductService;
@@ -26,9 +32,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class OrderPage {
 
@@ -90,13 +94,13 @@ public class OrderPage {
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colDesc.setCellValueFactory(new PropertyValueFactory<>("desc"));
         colPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
-        colQty.setCellValueFactory(new  PropertyValueFactory<>("qty"));
-        colTotal.setCellValueFactory(new  PropertyValueFactory<>("total"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
         loadDateAndTime();
         loadCustomerIds();
         loadProductIds();
 
-        btnCustomerId.getSelectionModel().selectedItemProperty().addListener((observableValue, oldVal, newVal) ->{
+        btnCustomerId.getSelectionModel().selectedItemProperty().addListener((observableValue, oldVal, newVal) -> {
 
             try {
                 setUsersValue((String) newVal);
@@ -104,13 +108,13 @@ public class OrderPage {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        } );
+        });
 
-        btnItemCode.getSelectionModel().selectedItemProperty().addListener((observableValue, oldVal, newVal) ->{
+        btnItemCode.getSelectionModel().selectedItemProperty().addListener((observableValue, oldVal, newVal) -> {
 
             setProductValue((String) newVal);
-        } );
-  idGenerate();
+        });
+        idGenerate();
 
     }
 
@@ -119,29 +123,29 @@ public class OrderPage {
     private Label txtTotal;
 
     UserService us = ServiceFactory.getInstance().getServiceType(ServiceType.USER);
-    ProductService ps =ServiceFactory.getInstance().getServiceType(ServiceType.PRODUCT);
-    OrderService os =ServiceFactory.getInstance().getServiceType(ServiceType.ORDER);
+    ProductService ps = ServiceFactory.getInstance().getServiceType(ServiceType.PRODUCT);
+    OrderService os = ServiceFactory.getInstance().getServiceType(ServiceType.ORDER);
     List<Cart> cartTM = new ArrayList<>();
 
     @FXML
     void btnCart(ActionEvent event) {
-    String id =btnItemCode.getValue().toString();
-    String desc=txtDesc.getText();
-    int qty = Integer.parseInt(txtQty.getText());
-    double unitPrice = Double.parseDouble(txtPrice.getText());
-    double total =qty * unitPrice;
-    
-    cartTM.add(new Cart(id,desc,qty,unitPrice,total));
-    
-    tblCarts.setItems(FXCollections.observableArrayList(cartTM));
-    
-    getNetTotal();
+        String id = btnItemCode.getValue().toString();
+        String desc = txtDesc.getText();
+        int qty = Integer.parseInt(txtQty.getText());
+        double unitPrice = Double.parseDouble(txtPrice.getText());
+        double total = qty * unitPrice;
+
+        cartTM.add(new Cart(id, desc, qty, unitPrice, total));
+
+        tblCarts.setItems(FXCollections.observableArrayList(cartTM));
+
+        getNetTotal();
     }
 
     private void getNetTotal() {
-        double netTot =0;
-        for (Cart c1 : cartTM){
-            netTot+=c1.getTotal();
+        double netTot = 0;
+        for (Cart c1 : cartTM) {
+            netTot += c1.getTotal();
 
             txtTotal.setText(String.valueOf(netTot));
         }
@@ -152,11 +156,11 @@ public class OrderPage {
     void btnPlaceOrder(ActionEvent event) throws SQLException {
 
         String orderId = lblOrderId.getText();
-        String date=lblDate.getText();
-        String userId=btnCustomerId.getValue().toString();
+        String date = lblDate.getText();
+        String userId = btnCustomerId.getValue().toString();
 
-        ArrayList< OrderDetails> orderDetailsArrayList =new ArrayList<>();
-        cartTM.forEach(cart ->orderDetailsArrayList.add(
+        ArrayList<OrderDetails> orderDetailsArrayList = new ArrayList<>();
+        cartTM.forEach(cart -> orderDetailsArrayList.add(
                 new OrderDetails(
                         orderId,
                         cart.getId(),
@@ -164,7 +168,7 @@ public class OrderPage {
                         cart.getUnitPrice())
         ));
 
-        Order o1 =new Order(orderId,date,userId,orderDetailsArrayList);
+        Order o1 = new Order(orderId, date, userId, orderDetailsArrayList);
         System.out.println(o1);
 
         os.placeOrder(o1);
@@ -182,9 +186,9 @@ public class OrderPage {
 //        -------------------TIME--------------------
 
         Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, e->{
+                new KeyFrame(Duration.ZERO, e -> {
                     LocalTime now = LocalTime.now();
-                    lblTime.setText(now.getHour()+" : "+now.getMinute()+" : "+now.getSecond());
+                    lblTime.setText(now.getHour() + " : " + now.getMinute() + " : " + now.getSecond());
                 }),
                 new KeyFrame(Duration.seconds(1))
         );
@@ -195,16 +199,16 @@ public class OrderPage {
     }
 
     private void loadCustomerIds() throws SQLException {
-       try {
-           List<String> userIds = us.getUserIds();
-           btnCustomerId.setItems(FXCollections.observableArrayList(userIds));
-       } catch (Exception e) {
-           throw new RuntimeException(e);
-       }
+        try {
+            List<String> userIds = us.getUserIds();
+            btnCustomerId.setItems(FXCollections.observableArrayList(userIds));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
-    public void loadProductIds (){
+    public void loadProductIds() {
         try {
             List<String> productIds = ps.getProductIds();
             btnItemCode.setItems(FXCollections.observableArrayList(productIds));
@@ -223,7 +227,7 @@ public class OrderPage {
         }
     }
 
-    public void setProductValue(String id){
+    public void setProductValue(String id) {
         try {
             Product p1 = ps.searchById(id);
             txtDesc.setText(p1.getName());
@@ -260,6 +264,36 @@ public class OrderPage {
         return newId;
     }
 
+    @FXML
+    void btnPrintBill(ActionEvent event) {
+        try {
+
+            JasperDesign design = JRXmlLoader.load("src/main/resources/report/Bill3.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
+
+            String orderId = lblOrderId.getText();
+
+
+            Map<String, Object> parameters = new HashMap<>();
+            parameters.put("orderId", orderId);
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    parameters,
+                    DBConnection.getInstance().getConnection()
+            );
+
+            // 5. Export and view the report
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "produ_report.pdf");
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (JRException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+}
 
 
 

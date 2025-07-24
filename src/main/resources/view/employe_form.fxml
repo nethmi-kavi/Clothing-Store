@@ -8,27 +8,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="572.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeForm">
+<AnchorPane prefHeight="612.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeForm">
    <children>
-      <AnchorPane prefHeight="96.0" prefWidth="738.0" style="-fx-background-color: #330033;">
+      <AnchorPane prefHeight="96.0" prefWidth="678.0" style="-fx-background-color: #330033;">
          <children>
-            <Label layoutX="253.0" prefHeight="70.0" prefWidth="287.0" text="Employee Page" textFill="#e1e1e1">
+            <Label layoutX="195.0" prefHeight="70.0" prefWidth="287.0" text="Employee Page" textFill="#e1e1e1">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="78.0" prefHeight="538.0" prefWidth="738.0" style="-fx-background-color: #9999FF;">
+      <AnchorPane layoutY="78.0" prefHeight="538.0" prefWidth="678.0" style="-fx-background-color: #9999FF;">
          <children>
-            <TableView fx:id="tblUser" layoutX="22.0" layoutY="243.0" prefHeight="254.0" prefWidth="679.0">
+            <TableView fx:id="tblUser" layoutX="22.0" layoutY="243.0" prefHeight="254.0" prefWidth="626.0">
               <columns>
-                <TableColumn fx:id="colId" prefWidth="133.60004425048828" text="ID" />
-                <TableColumn fx:id="colName" prefWidth="135.2000732421875" text="Name" />
-                  <TableColumn fx:id="colMob" prefWidth="135.2000732421875" text="Mobile" />
-                  <TableColumn fx:id="colUser" prefWidth="135.2000732421875" text="Username" />
-                  <TableColumn fx:id="colPass" prefWidth="133.60004425048828" text="Password" />
+                <TableColumn fx:id="colId" prefWidth="99.19994926452637" text="ID" />
+                <TableColumn fx:id="colName" prefWidth="142.39997100830078" text="Name" />
+                  <TableColumn fx:id="colMob" prefWidth="136.0" text="Mobile" />
+                  <TableColumn fx:id="colUser" prefWidth="131.19998168945312" text="Username" />
+                  <TableColumn fx:id="colPass" prefWidth="116.7999267578125" text="Password" />
               </columns>
             </TableView>
             <Label layoutX="82.0" layoutY="76.0" prefHeight="36.0" prefWidth="118.0" text="Name" />

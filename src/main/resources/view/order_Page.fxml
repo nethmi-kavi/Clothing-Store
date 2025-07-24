@@ -9,34 +9,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="573.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderPage">
+<AnchorPane prefHeight="573.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderPage">
    <children>
-      <AnchorPane layoutY="10.0" prefHeight="622.0" prefWidth="750.0" style="-fx-background-color: #9999FF;">
+      <AnchorPane prefHeight="612.0" prefWidth="658.0" style="-fx-background-color: #9999FF;">
          <children>
-            <TextField fx:id="txtPrice" layoutX="596.0" layoutY="244.0" prefHeight="26.0" prefWidth="85.0" promptText="Unit Price" />
-            <TextField fx:id="txtName" layoutX="281.0" layoutY="191.0" prefHeight="26.0" prefWidth="184.0" promptText="Customer Name" />
-            <TextField fx:id="txtMobile" layoutX="497.0" layoutY="191.0" prefHeight="26.0" prefWidth="184.0" promptText="Mobile" />
-            <TextField fx:id="lblOrderId" layoutX="497.0" layoutY="131.0" prefHeight="26.0" prefWidth="184.0" />
-            <Label fx:id="lblTime" layoutX="357.0" layoutY="132.0" prefHeight="26.0" prefWidth="110.0" />
-            <Label fx:id="lblDate" layoutX="136.0" layoutY="131.0" prefHeight="26.0" prefWidth="110.0" />
-            <Label layoutX="65.0" layoutY="136.0" prefHeight="18.0" prefWidth="47.0" text="Date">
+            <TextField fx:id="txtPrice" layoutX="555.0" layoutY="244.0" prefHeight="26.0" prefWidth="85.0" promptText="Unit Price" />
+            <TextField fx:id="txtName" layoutX="236.0" layoutY="191.0" prefHeight="26.0" prefWidth="184.0" promptText="Customer Name" />
+            <TextField fx:id="txtMobile" layoutX="446.0" layoutY="191.0" prefHeight="26.0" prefWidth="184.0" promptText="Mobile" />
+            <TextField fx:id="lblOrderId" layoutX="446.0" layoutY="133.0" prefHeight="26.0" prefWidth="184.0" />
+            <Label fx:id="lblTime" layoutX="314.0" layoutY="131.0" prefHeight="26.0" prefWidth="110.0" />
+            <Label fx:id="lblDate" layoutX="100.0" layoutY="134.0" prefHeight="26.0" prefWidth="110.0" />
+            <Label layoutX="39.0" layoutY="135.0" prefHeight="18.0" prefWidth="47.0" text="Date">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="281.0" layoutY="135.0" prefHeight="18.0" prefWidth="47.0" text="Time">
+            <Label layoutX="253.0" layoutY="134.0" prefHeight="18.0" prefWidth="47.0" text="Time">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="txtDesc" layoutX="281.0" layoutY="244.0" prefHeight="26.0" prefWidth="156.0" promptText="Description" />
-            <ComboBox fx:id="btnCustomerId" layoutX="61.0" layoutY="192.0" prefHeight="26.0" prefWidth="156.0" promptText="Customer Id" />
-            <ComboBox fx:id="btnItemCode" layoutX="59.0" layoutY="244.0" prefHeight="26.0" prefWidth="156.0" promptText="Item Code" />
-            <TextField fx:id="txtStock" layoutX="461.0" layoutY="244.0" prefHeight="26.0" prefWidth="101.0" promptText="Stock" />
-            <TextField fx:id="txtQty" layoutX="461.0" layoutY="296.0" prefHeight="26.0" prefWidth="101.0" promptText="Qty" />
-            <Button layoutX="589.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnCart" prefHeight="26.0" prefWidth="86.0" text="Add To Cart" textFill="#32044b" />
-            <TableView fx:id="tblCarts" layoutX="89.0" layoutY="343.0" prefHeight="200.0" prefWidth="549.0">
+            <TextField fx:id="txtDesc" layoutX="236.0" layoutY="244.0" prefHeight="26.0" prefWidth="156.0" promptText="Description" />
+            <ComboBox fx:id="btnCustomerId" layoutX="34.0" layoutY="191.0" prefHeight="26.0" prefWidth="156.0" promptText="Customer Id" />
+            <ComboBox fx:id="btnItemCode" layoutX="34.0" layoutY="244.0" prefHeight="26.0" prefWidth="156.0" promptText="Item Code" />
+            <TextField fx:id="txtStock" layoutX="436.0" layoutY="244.0" prefHeight="26.0" prefWidth="101.0" promptText="Stock" />
+            <TextField fx:id="txtQty" layoutX="436.0" layoutY="293.0" prefHeight="26.0" prefWidth="101.0" promptText="Qty" />
+            <Button layoutX="554.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnCart" prefHeight="26.0" prefWidth="86.0" text="Add To Cart" textFill="#32044b" />
+            <TableView fx:id="tblCarts" layoutX="39.0" layoutY="341.0" prefHeight="200.0" prefWidth="549.0">
                <columns>
                   <TableColumn fx:id="colId" prefWidth="99.19998168945312" text="Item Code" />
                   <TableColumn fx:id="colDesc" prefWidth="103.20002746582031" text="Description" />
@@ -55,16 +54,17 @@
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </Label>
-            <Button layoutX="606.0" layoutY="564.0" mnemonicParsing="false" onAction="#btnPlaceOrder" prefHeight="26.0" prefWidth="102.0" text="Place Order" textFill="#4e0766" />
-            <AnchorPane layoutX="-12.0" layoutY="-12.0" prefHeight="84.0" prefWidth="762.0" style="-fx-background-color: #330033;">
+            <Button layoutX="395.0" layoutY="562.0" mnemonicParsing="false" onAction="#btnPlaceOrder" prefHeight="26.0" prefWidth="102.0" text="Place Order" textFill="#4e0766" />
+            <AnchorPane layoutX="-12.0" layoutY="-12.0" prefHeight="84.0" prefWidth="670.0" style="-fx-background-color: #330033;">
                <children>
-                  <Label layoutX="306.0" prefHeight="70.0" prefWidth="214.0" text="Order Page" textFill="#e1e1e1">
+                  <Label layoutX="228.0" layoutY="7.0" prefHeight="70.0" prefWidth="214.0" text="Order Page" textFill="#e1e1e1">
                      <font>
                         <Font name="System Bold" size="32.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
+            <Button layoutX="503.0" layoutY="562.0" mnemonicParsing="false" onAction="#btnPrintBill" prefHeight="26.0" prefWidth="102.0" text="Print Bill" textFill="#4e0766" />
          </children>
       </AnchorPane>
    </children>

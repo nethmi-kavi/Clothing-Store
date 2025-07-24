@@ -35,6 +35,15 @@ public class UserDashboard {
     }
 
     @FXML
+    void btnSupplier(ActionEvent event) throws IOException {
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Supplier.fxml"))));
+        stage.show();
+
+    }
+
+    @FXML
     void btnReports(ActionEvent event) throws IOException {
 
         Stage stage = new Stage();
@@ -42,5 +51,6 @@ public class UserDashboard {
         stage.show();
 
     }
+
 
 }

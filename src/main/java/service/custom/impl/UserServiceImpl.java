@@ -74,6 +74,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Boolean UpdateUserPassword(String id,String password) throws SQLException {
+
+        return us.updateUserPassword(id, password);
+    }
+
+    @Override
     public List<String> getUserIds() throws SQLException {
         List<User> all= getAll();
         ArrayList<String> userList = new ArrayList<>();

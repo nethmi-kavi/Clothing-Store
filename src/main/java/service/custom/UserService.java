@@ -16,5 +16,6 @@ public interface UserService extends SuperService {
 
     User SearchById(String id)throws SQLException;
     Boolean UpdateUser(User u1) throws SQLException;
+    Boolean UpdateUserPassword(String id,String password) throws SQLException;
     List<String> getUserIds() throws SQLException;
 }

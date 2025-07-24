@@ -55,7 +55,7 @@ public class CustomerLogin {
 
         if(user.equals("admin") && password.equals("1234")){
             Stage stage = new Stage();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/AdminPage.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/AdminDashboard.fxml"))));
             stage.show();
         }
         else {
@@ -63,7 +63,7 @@ public class CustomerLogin {
 
             if (u1 != null && password.equals(u1.getPassword())) {
                 Stage stage = new Stage();
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/User_Dashboard.fxml"))));
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/UserDashboard.fxml"))));
                 stage.show();
             } else if (u1 != null) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);

@@ -34,6 +34,14 @@ public class AdminPage {
     }
 
     @FXML
+    void btnForgetPassword(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/forgetPassword.fxml"))));
+        stage.show();
+
+    }
+
+    @FXML
     void btnReports(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/reports.fxml"))));
@@ -48,5 +56,16 @@ public class AdminPage {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/UserPage.fxml"))));
         stage.show();
     }
+
+    @FXML
+    void btnad(ActionEvent event) throws IOException {
+
+        Stage stage = new Stage();
+
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/AdminDashboard.fxml"))));
+        stage.show();
+
+    }
+
 
 }

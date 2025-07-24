@@ -14,5 +14,5 @@ public class OrderEntity {
     private  String orderId;
     private String date;
     private String userId;
-   // private List<OrderDetails> orderDetails;
+
 }
