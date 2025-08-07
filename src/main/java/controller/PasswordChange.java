@@ -41,10 +41,21 @@ public class PasswordChange {
 
     @FXML
     void updateBtn(ActionEvent event) {
+
         try{
             String id = txtId.getText();
             String password = txtPword.getText();
 
+            User u1 = us.SearchById(id);
+
+        if(u1 == null){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Could not Update Password");
+                alert.setContentText("Please Enter Valid id");
+                alert.showAndWait();
+
+        }
             boolean success = us.UpdateUserPassword(id, password);
 
 

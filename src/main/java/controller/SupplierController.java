@@ -114,7 +114,7 @@ public class SupplierController {
         String newId = prefix + "001";
 
         try {
-            ResultSet rs = CrudUtil.execute("SELECT id FROM supplier ORDER BY id DESC LIMIT 1");
+            ResultSet rs = CrudUtil.execute("SELECT id FROM companysupplier ORDER BY id DESC LIMIT 1");
 
             if (rs != null && rs.next()) {
                 String lastId = rs.getString("id");

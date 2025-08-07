@@ -15,7 +15,7 @@ public class SupplierRepositoryImpl implements SupplierRepository {
 
     @Override
     public boolean add(SupplierEntity entity) throws SQLException {
-        return CrudUtil.execute("INSERT INTO supplier (id, name,regNo, mobile, address, email) VALUES (?, ?, ?, ?, ?)",
+        return CrudUtil.execute("INSERT INTO supplier (id, name,regNo, mobile, address, email) VALUES (?, ?, ?, ?, ?,?)",
                 entity.getId(),entity.getName(),entity.getRegNo(),entity.getMobile(),entity.getAddress(),entity.getEmail());
     }
 

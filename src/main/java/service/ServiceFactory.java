@@ -6,6 +6,7 @@ import model.User;
 import service.custom.impl.*;
 import util.ServiceType;
 
+import static util.RepositoryType.COMPANYSUPPLIER;
 import static util.RepositoryType.SUPPLIER;
 
 public class ServiceFactory {
@@ -23,6 +24,7 @@ public class ServiceFactory {
             case USER:return(T) new UserServiceImpl();
             case ORDER:return(T) new OrderServiceImpl();
             case SUPPLIER:return(T) new SupplierServiceImpl();
+            case COMPANYSUPPLIER:return(T) new CompanySupplierServiceImpl();
 
         }
         return null;

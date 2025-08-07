@@ -40,6 +40,11 @@
                         <Font size="22.0" />
                      </font>
                   </Button>
+                  <Button layoutX="33.0" layoutY="491.0" mnemonicParsing="false" onAction="#btnSuppliers" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #330033; -fx-background-radius: 10;" text="Suppliers" textFill="#fcf1f1">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
          </children>

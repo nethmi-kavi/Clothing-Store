@@ -38,7 +38,7 @@ public class SupplierServiceImpl  implements SupplierService {
     }
 
     @Override
-    public Boolean deleteSupplier(String id) throws SQLException {
+    public boolean deleteSupplier(String id) throws SQLException {
         return sr.delete(id);
     }
 
@@ -49,5 +49,12 @@ public class SupplierServiceImpl  implements SupplierService {
             return null;
         }
         return new ModelMapper().map(entity,Supplier.class);
+    }
+
+    @Override
+    public boolean UpdateSupplier(Supplier s1) throws SQLException {
+        SupplierEntity se= new ModelMapper().map(s1,SupplierEntity.class);
+
+        return sr.update(se);
     }
 }
